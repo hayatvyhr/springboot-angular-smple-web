@@ -3,8 +3,13 @@
 ##### Others folder and files for angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
+###  _Able to update delete or add new customer_ 
+![image](https://github.com/user-attachments/assets/97addb0a-370b-4c4b-bf91-3a6fcc684cb4)
 
-![image](https://github.com/hayatvyhr/springboot-angular-smple-web/assets/122895256/cd4b3208-24e0-4d32-b9db-9e72ed66e7c2)
+### _Able to make orders for customer_ 
+<br>
+
+![image](https://github.com/user-attachments/assets/b3a53d1f-9143-4e03-9440-79dfcb3b3685)
 
 ## Development server
 
