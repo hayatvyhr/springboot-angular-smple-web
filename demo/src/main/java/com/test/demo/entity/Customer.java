@@ -3,6 +3,8 @@ package com.test.demo.entity;
 import jakarta.persistence.*;
 @Entity
 @Table(name = "customer")
+
+
 public class Customer {
     @Id
     @Column(name="customer_id" , length = 50)

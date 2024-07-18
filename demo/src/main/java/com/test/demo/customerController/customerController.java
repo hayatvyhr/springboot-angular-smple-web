@@ -3,6 +3,7 @@ package com.test.demo.customerController;
 import com.test.demo.DTO.CustomerDTO;
 import com.test.demo.DTO.customerSavedto;
 import com.test.demo.DTO.customerUpdateDto;
+import com.test.demo.DTO.orderDto;
 import com.test.demo.Service.customerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,11 @@ public class customerController {
     public String deleteCustomer(@PathVariable(value = "id") int id ) {
         boolean deletecus = customerservice.deleteCustomer(id);
         return "deleted";
+    }
+
+    @PostMapping(path = "/makeOrder")
+    public int makeOrder(@RequestBody orderDto orderDto) {
+        return customerservice.makeOrder(orderDto);
     }
 
 }

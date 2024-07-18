@@ -3,8 +3,11 @@ package com.test.demo.Service;
 import com.test.demo.DTO.CustomerDTO;
 import com.test.demo.DTO.customerSavedto;
 import com.test.demo.DTO.customerUpdateDto;
+import com.test.demo.DTO.orderDto;
 import com.test.demo.customerRepo.CustomerRepo;
+import com.test.demo.customerRepo.OrderRepo;
 import com.test.demo.entity.Customer;
+import com.test.demo.entity.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +19,25 @@ public class customerServiceIMPL implements customerService {
 
     @Autowired
     private CustomerRepo customerRepo;
+    @Autowired
+    private OrderRepo orderRepo;
+
+    @Override
+    public int makeOrder(orderDto orderDto) {
+        Customer customer = customerRepo.findById(orderDto.getCustomerId())
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        Order order = new Order();
+        order.setItem(orderDto.getItem());
+        order.setDate(orderDto.getDate());
+        order.setQuantity(orderDto.getQuantity());
+
+        order.setCustomer(customer);
+
+        orderRepo.save(order);
+
+        return order.getId_order();
+    }
 
 
     @Override
@@ -28,7 +50,7 @@ public class customerServiceIMPL implements customerService {
 
                 );
         customerRepo.save(customer);
-        return customer.getCusname();
+        return customer.getCusname() + customer.getCusaddress() + customer.getMobile();
     }
 
     @Override
