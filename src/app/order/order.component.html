@@ -1,0 +1,31 @@
+<div class="container mt-5" style="background-color: grey; width: 400px; height: auto; border-radius: 15px; padding: 20px;">
+    <h2 class="text-center text-white mb-4">Make an Order</h2>
+    <form  (ngSubmit)="makeOrder()">
+      <div class="form-group mb-3">
+        <label for="idCustomer" style="color: rgb(112, 217, 168); font-size: 24px; font-weight: 500;">Quantity</label>
+        <input type="number" [(ngModel)]="quantity" [ngModelOptions]="{standalone: true}" class="form-control bg-white" id="quantity" placeholder="Enter quantity" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="idCustomer" style="color: rgb(112, 217, 168); font-size: 24px; font-weight: 500;">id Customer</label>
+        <input type="number" class="form-control bg-white" id="idCustomer"  [ngModelOptions]="{standalone: true}"placeholder="Enter idCustomer" required [(ngModel)]="idCustomer">
+      </div>
+
+
+      <div class="form-group mb-3">
+        <label for="item" style="color: rgb(112, 217, 168); font-size: 24px; font-weight: 500;">Select Item</label>
+        <select class="form-control bg-white" [(ngModel)]="item" [ngModelOptions]="{standalone: true}"  id="item" required>
+          <option value="item 1">Item 1</option>
+          <option value="item 2">Item 2</option>
+          <option value="item 3">Item 3</option>
+          <option value="item 4">Item 4</option>
+          <option value="item 5">Item 5</option>
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="deliveryDate" style="color: rgb(112, 217, 168); font-size: 24px; font-weight: 500;">Delivery Date</label>
+        <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" class="form-control bg-white" id="deliveryDate" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" >Submit</button>
+    </form>
+  </div>
+  

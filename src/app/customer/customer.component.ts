@@ -47,7 +47,7 @@ constructor(private http: HttpClient )
     this.http.post("http://localhost:8084/api/v1/customer/save",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Employee Registered Successfully");
+        alert("Employee Registered Successfully" );
         this.getAllCustomer();
         this.customername = '';
         this.customeraddress = '';

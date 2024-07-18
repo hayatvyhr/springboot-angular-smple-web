@@ -47,15 +47,16 @@
             <tbody>
                 <tr *ngFor="let CustomerItem of CustomerArray">
      
-                <th scope="row">{{CustomerItem.customerid  }}</th>
+                <th scope="row">{{CustomerItem.id  }}</th>
                 <td>{{CustomerItem.cusname  | uppercase}}</td>
                 <td>{{CustomerItem.cusaddress }}</td>
                 <td>{{CustomerItem.mobile }}</td>
      
                 <td>
-                  <button type="button" class="btn btn-success" (click)="setUpdate(CustomerItem)">Edit</button>
+                  <button type="button" class="btn btn-success " style="margin-left: 2%;" (click)="setUpdate(CustomerItem)">Edit</button>
                   
-                  <button type="button" class="btn btn-danger" (click)="setDelete(CustomerItem)">Delete</button>
+                  <button type="button" class="btn btn-danger "  style="margin-left: 2%;"  (click)="setDelete(CustomerItem)">Delete</button>
+                  <button type="button" class="btn btn-primary"  style="margin-left: 2%;"   [routerLink]="['/order', CustomerItem.id]">Make order</button>
                 
                 </td>
               </tr>
